@@ -222,6 +222,15 @@ Estas métricas requieren datos de signos vitales o resultados de laboratorio.
       7. Temperatura.
     * **Lógica de Software:** El sistema suma puntos (0 a 3) por cada parámetro que se desvíe de lo normal. Un puntaje de 5 o más es una "Alerta Roja" que requiere respuesta urgente.
 
+    **Sistema de Puntuación por Parámetro:**
+    1. **Frecuencia respiratoria (rpm):** 0 puntos (12-20), 1 punto (9-11), 2 puntos (21-24) y 3 puntos (menor a 9 o mayor a 24).
+    2. **Saturación de oxígeno (%):** 0 puntos (96 o más), 1 punto (94-95), 2 puntos (92-93) y 3 puntos (menos de 92).
+    3. **Oxígeno suplementario:** 0 puntos si no tiene, 2 puntos si tiene.
+    4. **Presión arterial sistólica (mmHg):** 0 puntos (111-219), 1 punto (101-110), 2 puntos (91-100) y 3 puntos (menor a 91 o mayor a 219).
+    5. **Frecuencia cardíaca (lpm):** 0 puntos (51-90), 1 punto (41-50 o 91-110), 2 puntos (111-130) y 3 puntos (menor a 41 o mayor a 130).
+    6. **Nivel de conciencia (Escala ACVPU):** 0 puntos (alerta) o 3 puntos si presenta alteración (CVPU).
+    7. **Temperatura (ºC):** 0 puntos (36.1-38.0), 1 punto (35.1-36.0 o 38.1-39.0), 2 puntos (más de 39.1) y 3 puntos (35.0 o menos).
+
 </details>
 
 
