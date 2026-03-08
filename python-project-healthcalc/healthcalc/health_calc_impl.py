@@ -30,6 +30,21 @@ class HealthCalcImpl(HealthCalc):
             
         return weight / (height ** 2)
     
+    def ibw(self, height_cm: float, gender: str) -> float:
+        if height_cm <= 0:
+            raise InvalidHealthDataException("Height must be positive.")
+        if height_cm < 30 or height_cm > 300:
+            raise InvalidHealthDataException("Height must be within a possible biological range [30-300] cm.")
+
+        gender_lower = gender.lower().strip()
+        if gender_lower in ["man", "hombre", "m"]:
+            result = (height_cm - 100) - ((height_cm - 150) / 4.0)
+        elif gender_lower in ["woman", "mujer", "f", "w"]:
+            result = (height_cm - 100) - ((height_cm - 150) / 2.0)
+        else:
+            raise InvalidHealthDataException("Gender must be 'man' or 'woman'.")
+        return result
+    
     def news2(frecResp: float, oxSat: float, oxSup: bool, preArtSis: float, frecCard: float, consciente: bool, temp: float):
         news2 = 0
         
@@ -81,14 +96,16 @@ class HealthCalcImpl(HealthCalc):
         elif (frecCard <= 36 or frecCard > 38):
             news2 = news2 + 1
 
-        if frecResp <= 0:
-            raise InvalidHealthDataException("Respiratory rate must be positive.")
-        if oxSat <= 0:
-            raise InvalidHealthDataException("Oxigen saturation rate must be positive.")
-        if preArtSis <= 0:
-            raise InvalidHealthDataException("Systolic blood pressure must be positive.")
-        if frecCard <= 0:
-            raise InvalidHealthDataException("Heart rate rate must be positive.") # vv
+        if frecResp <= 0 or frecResp >= 100:
+            raise InvalidHealthDataException("Respiratory rate must be between 0 - 100.")
+        if oxSat <= 0 or oxSat >= 100:
+            raise InvalidHealthDataException("Oxigen saturation rate must be between 0 - 100 bpm.")
+        if preArtSis <= 0 or preArtSis >= 100:
+            raise InvalidHealthDataException("Systolic blood pressure must be between 0 -100 mmHg.")
+        if frecCard <= 0 or frecCard >= 300:
+            raise InvalidHealthDataException("Heart rate rate must be between 0 - 300 bpm.") 
+        if temp <= 20 or temp >= 50:
+            raise InvalidHealthDataException("Oxigen saturation rate must be between 20 - 50 ºC.")
         
         if news2 >= 5:
             result = "Red alert: score of " + news2

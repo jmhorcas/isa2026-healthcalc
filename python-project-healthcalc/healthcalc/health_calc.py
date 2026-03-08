@@ -27,8 +27,19 @@ class HealthCalc(ABC):
         pass
 
     @abstractmethod
+    def ibw(self, height_cm: float, gender: str) -> float:
+        """Calculate the Ideal Body Weight (IBW) based on Lorentz Formula.
+        
+        :param height_cm: Height (cm)
+        :param gender: Gender ('man' or 'woman')
+        :return: Ideal Body Weight (kg)
+        :raises InvalidHealthDataException: If data is out of range
+        """
+        pass
+
+    @abstractmethod
     def news2(frecResp: float, oxSat: float, oxSup: bool, preArtSis: float, frecCard: float, consciente: bool, temp: float):
-        """Calculate NEWS" score.
+        """Calculate NEWS2 score.
         
         :param frecResp: Respiratory rate (per minute)
         :param oxSat: Oxigen saturation (%)
