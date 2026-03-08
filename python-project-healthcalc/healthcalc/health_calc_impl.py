@@ -45,7 +45,7 @@ class HealthCalcImpl(HealthCalc):
             raise InvalidHealthDataException("Gender must be 'man' or 'woman'.")
         return result
     
-    def news2(frecResp: float, oxSat: float, oxSup: bool, preArtSis: float, frecCard: float, consciente: bool, temp: float):
+    def news2(self, frecResp: float, oxSat: float, oxSup: bool, preArtSis: float, frecCard: float, consciente: str, temp: float):
         news2 = 0
         
         # Frecuencia respiratoria
@@ -85,7 +85,7 @@ class HealthCalcImpl(HealthCalc):
             news2 = news2 + 1
 
         # Nivel de consciencia
-        if (consciente == False):
+        if (consciente == "cvpu"):
             news2 = news2 + 3
 
         # Temperatura
@@ -108,9 +108,9 @@ class HealthCalcImpl(HealthCalc):
             raise InvalidHealthDataException("Oxigen saturation rate must be between 20 - 50 ºC.")
         
         if news2 >= 5:
-            result = "Red alert: score of " + news2
+            #result = "Red alert: score of " + str(news2)
+            result = news2
         else:
             result = news2
         
         return result
-    
