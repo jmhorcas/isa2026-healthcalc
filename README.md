@@ -3,7 +3,7 @@ Bienvenido al proyecto de la asignatura de **Ingeniería del Software Avanzada**
 
 El [Hospital Universitario Virgen de la Victoria (El Clínico)](https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/hospital/virgen-victoria/) de Málaga nos ha encargado el desarrollo de una **Calculadora de Salud** (**_HealthCalc_**) que permita calcular diferentes métricas de los pacientes.
 
-![MOdelo de características de la calculadora de salud.](resources/images/healthcalc_fm.png)
+![Modelo de características de la calculadora de salud.](resources/images/healthcalc_fm.png)
 
 ## Requisitos  
 
@@ -99,8 +99,7 @@ Para que el proyecto cumpla con estándares de software médico, se deben inclui
 
 * **M4: Perímetro Abdominal (PA) o _Waist Circumference_ (WC):** Es la medición lineal de la circunferencia de la cintura. Se considera el indicador clínico directo de grasa visceral más sencillo y aceptado para predecir obesidad abdominal.
   
-    * **Valores de Referencia (Riesgo Elevado):**  
-      - **Hombres:** $\ge 94\text{ - }102 \text{ cm}$  
+    * **Valores de Referencia (Riesgo Elevado):** - **Hombres:** $\ge 94\text{ - }102 \text{ cm}$  
       - **Mujeres:** $\ge 80\text{ - }88 \text{ cm}$
 
 ---
@@ -108,8 +107,7 @@ Para que el proyecto cumpla con estándares de software médico, se deben inclui
 * **M5: Índice de Cintura-Cadera (ICC) o _Waist-to-Hip Ratio_ (WHR):** Es ICC la relación entre el perímetro de la cintura y el de la cadera. Se utiliza para identificar la distribución de la grasa (cuerpo tipo "manzana" o "pera") y estimar el riesgo de enfermedades cardiovasculares.
   
     * **Fórmula:** $ICC = \frac{\text{Circunferencia de cintura (cm)}}{\text{Circunferencia de cadera (cm)}}$
-    * **Valores de Riesgo (OMS):**  
-        - **Hombres:** $> 0.90$  
+    * **Valores de Riesgo (OMS):** - **Hombres:** $> 0.90$  
         - **Mujeres:** $> 0.85$
 
     Tipos de Morfología:
@@ -143,14 +141,14 @@ Para que el proyecto cumpla con estándares de software médico, se deben inclui
     1. **Ecuación de Mifflin-St Jeor**
     Es actualmente la más precisa para la población general y la que utilizan la mayoría de calculadoras modernas. 
 
-        - **Hombres:**  `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) + 5`
-        - **Mujeres:**  `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) - 161`
+        - **Hombres:** `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) + 5`
+        - **Mujeres:** `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) - 161`
 
     2. **Ecuación de Harris-Benedict (revisada)**
     Es el método clásico. La versión original de 1919 fue revisada en 1984 por Roza y Shizgal para mejorar su exactitud.
 
-        - **Hombres:**  `TMB = 88.362 + (13.397 × peso en kg) + (4.799 × altura en cm) - (5.677 × edad en años)`
-        - **Mujeres:**  `TMB = 447.593 + (9.247 × peso en kg) + (3.098 × altura en cm) - (4.330 × edad en años)`
+        - **Hombres:** `TMB = 88.362 + (13.397 × peso en kg) + (4.799 × altura en cm) - (5.677 × edad en años)`
+        - **Mujeres:** `TMB = 447.593 + (9.247 × peso en kg) + (3.098 × altura en cm) - (4.330 × edad en años)`
 
     3. **Ecuación de Katch-McArdle**
     A diferencia de las anteriores, esta fórmula no distingue entre sexos, sino que utiliza la Masa Corporal Magra (peso sin grasa). Es ideal si conoces tu porcentaje de grasa corporal.
@@ -194,8 +192,7 @@ Estas métricas requieren datos de signos vitales o resultados de laboratorio.
 
 * **M9: Índice de Adiposidad Visceral (VAI) o _Visceral Adiposity Index_ (VAI):** Es un indicador empírico que estima la función del tejido adiposo visceral y el riesgo cardiometabólico. Combina medidas físicas (IMC y CC) con parámetros lipídicos (Triglicéridos y HDL).
   
-    **Fórmulas:**  
-        - **Hombres:** $VAI = \left( \frac{CC}{39.68 + (1.88 \times IMC)} \right) \times \left( \frac{TG}{1.03} \right) \times \left( \frac{1.31}{HDL} \right)$  
+    **Fórmulas:** - **Hombres:** $VAI = \left( \frac{CC}{39.68 + (1.88 \times IMC)} \right) \times \left( \frac{TG}{1.03} \right) \times \left( \frac{1.31}{HDL} \right)$  
         - **Mujeres:** $VAI = \left( \frac{CC}{36.58 + (1.89 \times IMC)} \right) \times \left( \frac{TG}{0.81} \right) \times \left( \frac{1.52}{HDL} \right)$  
     *(Donde CC = Circunferencia de Cintura en cm, TG = Triglicéridos y HDL en mmol/L)*.
 
@@ -203,8 +200,7 @@ Estas métricas requieren datos de signos vitales o resultados de laboratorio.
 
 * **M10: Tasa de Filtración Glomerular Estimada (eGFR) o _Estimated Glomerular Filtration Rate_ (eGFR):** Es el "estándar de oro" para evaluar qué tan bien están filtrando la sangre los riñones. Es vital para la detección de la Enfermedad Renal Crónica (ERC) y para ajustar dosis de fármacos.
   
-    **Fórmulas Comunes:**  
-      * **Cockcroft-Gault (Clásica):** $\frac{(140 - \text{edad}) \times \text{peso}}{72 \times \text{creatinina}} \times (0.85 \text{ si es mujer})$.  
+    **Fórmulas Comunes:** * **Cockcroft-Gault (Clásica):** $\frac{(140 - \text{edad}) \times \text{peso}}{72 \times \text{creatinina}} \times (0.85 \text{ si es mujer})$.  
       * **CKD-EPI (Moderna):** Utiliza logaritmos y variables de raza/sexo para mayor precisión (es la recomendada actualmente en software clínico).  
     * **Entradas necesarias:** Creatinina sérica (mg/dL), edad, sexo y etnia.  
 
@@ -252,6 +248,29 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
+<details>
+<summary><b>Pruebas de Cálculo del Peso Ideal (IBW - Lorentz)</b></summary>
+
+* **Cálculo correcto por género:** Se verifica matemáticamente la fórmula de Lorentz tanto para hombres como para mujeres en parámetros medios.
+* **Soporte Multi-unidad:** Se comprueba que la conversión de alturas proporcionadas en pulgadas (in) a centímetros (cm) se realiza con exactitud antes de aplicar la fórmula.
+* **Protección ante datos irreales:**
+    * El sistema debe rechazar cálculos para alturas menores a 40 cm o superiores a 300 cm.
+    * El sistema lanza una excepción controlada si se introduce un género no válido (ej. cadenas vacías, números o caracteres no reconocidos).
+
+</details>
+
+<details>
+<summary><b>Pruebas de Cálculo de la Tasa Metabólica Basal (BMR - OMS)</b></summary>
+
+* **Cálculo correcto por género y edad:** Se comprueba que se aplica la ecuación correcta de la OMS dependiendo de si el usuario está en la franja de jóvenes (18-30) o adultos (31-60).
+* **Soporte Multi-unidad:** Se verifica la correcta conversión de pesos proporcionados en libras (lb) a kilogramos (kg).
+* **Protección ante datos imposibles:**
+    * El sistema rechaza edades negativas o iguales a cero.
+    * El sistema rechaza pesos ilógicos (menores/iguales a 0 kg, o mayores a 700 kg).
+    * Control estricto de género mediante el lanzamiento de excepciones para formatos inválidos.
+
+</details>
+
 
 ## Instalación y ejecución
 
@@ -268,16 +287,15 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 1. Clonar este repositorio: `git clone https://github.com/IngSoftAvanz/healthcalc.git`
 2. Desplazarse a la carpeta del proyecto:
    `cd healthcalc/python-project-healthcalc`
-3. Crear entorno virtual: `python -m venv env` (esto crea una carpeta `env` para el entorno virtual)
+3. Crear entorno virtual: `python -m venv venv`
 4. Activar el entorno virtual:
-    - En Windows: `.\env\Scripts\Activate`
-    - En Linux: `. env/bin/activate`
-5. Instalar dependencias: `pip install -r requirements.txt`
+    - En Windows: `.\venv\Scripts\activate`
+5. Instalar dependencias: `pip install pytest pytest-cov`
 
 ### Ejecución
-- Ejecutar la aplicación: `python main.py <número>`
+- Ejecutar el menú de la aplicación: `python main.py`
 - Ejecutar los tests: `pytest -v`
-- Ejecutar los tests con informe de cobertura: `pytest -v --cov=factorial --cov-report=html tests/`
+- Ejecutar los tests con informe de cobertura: `pytest --cov=healthcalc`
 
 </details>
 
@@ -296,7 +314,6 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 2. Desplazarse a la carpeta del proyecto:
    `cd healthcalc/java-project-healthcalc`
 3. Compilar con Maven: `mvn clean compile`
-
 
 ### Ejecución
 - Ejecutar la aplicación: Clic en Run usando el IDE.
