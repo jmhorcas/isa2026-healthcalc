@@ -3,6 +3,17 @@ from healthcalc import HealthCalc, InvalidHealthDataException
 
 class HealthCalcImpl(HealthCalc):
 
+# Almacena una instancia única:
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            # En caso de que no exista, se crea:
+            cls._instance = super(HealthCalcImpl, cls).__new__(cls)
+        return cls._instance
+
+
+
 # -- Multi-drive support: drive swapping:
 
     def weight_to_kg(self, weight: float, unit: str) -> float:
