@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthCalc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>HealthCalc</h1>
+
+        <form method="POST" class="main-layout">
+            <div class="left-panel">
+                <label for="height">Altura (cm)</label>
+                <input type="number" name="height" id="height" step="0.01">
+
+                <label for="weight">Peso (kg)</label>
+                <input type="number" name="weight" id="weight" step="0.01">
+
+                <label for="age">Edad</label>
+                <input type="number" name="age" id="age">
+
+                <label>Género</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> Masculino</label>
+                    <label><input type="radio" name="gender" value="female"> Femenino</label>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <label>Resultado</label>
+                <input type="text" value="{{ result if result else '' }}" readonly>
+
+                <label>Clasificación BMI</label>
+                <input type="text" value="{{ classification if classification else '' }}" readonly>
+            </div>
+
+            <div class="bottom-panel">
+                <label for="metric">Elige la métrica a calcular</label>
+                <select name="metric" id="metric">
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="bmi">BMI</option>
+                    <option value="ibw">IBW</option>
+                    <option value="bmr">Basal Metabolic Rates</option>
+                </select>
+
+                <button type="submit">Calcular</button>
+            </div>
+        </form>
+
+        {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

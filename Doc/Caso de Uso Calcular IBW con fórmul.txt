@@ -1,0 +1,43 @@
+Caso de Uso: Calcular IBW con fórmula de Lorentz.
+ID: CU-02
+Actor principal: Usuario.
+Ámbito: HealthCalc.
+Nivel: Objetivo de usuario.
+Descripción: El usuario quiere calcular su peso ideal teórico (IBW) usando la fórmula de Lorentz. Para hacerlo, el sistema debe pedir la altura y el género, comprobar que los datos sean correctos, pasar la altura a centímetros si hace falta y aplicar la fórmula que corresponda.
+
+Interesados:
+• Usuario: Quiere saber su peso ideal aproximado según la fórmula de Lorentz.
+• Sistema: Tiene que hacer bien el cálculo y evitar errores en los datos de entrada.
+
+Precondiciones:
+• La aplicación está funcionando.
+• El usuario dispone de su altura.
+• El usuario introduce un género admitido por el sistema.
+
+Disparador: El usuario selecciona la opción de calcular IBW.
+
+Garantía de éxito:
+• El sistema calcula correctamente el IBW y muestra el resultado al usuario.
+
+Garantía mínima:
+• Si la altura o el género no son válidos, el sistema muestra un mensaje de error y no hace el cálculo.
+
+Escenario principal de éxito:
+1. El usuario entra en la aplicación.
+2. El usuario selecciona la opción de calcular IBW.
+3. El sistema pide la altura, la unidad de altura y el género.
+4. El usuario mete la altura.
+5. El usuario indica la unidad de altura.
+6. El usuario mete el género.
+7. El sistema convierte la altura a centímetros si hace falta.
+8. El sistema comprueba que la altura esté dentro de un rango biológico posible.
+9. El sistema comprueba que el género introducido sea válido.
+10. El sistema aplica la fórmula de Lorentz según el género.
+11. El sistema muestra el resultado al usuario.
+
+Extensiones:
+4a. Altura no válida: El sistema indica que la altura introducida no es correcta.
+5a. Unidad no reconocida: El sistema muestra el error y no sigue con el cálculo.
+6a. Género no válido: El sistema indica que el género debe ser male o female.
+8a. Altura fuera de rango: El sistema muestra un mensaje de error y termina el caso de uso.
+Cualquier paso. El usuario cancela: El sistema para la operación sin calcular ningún resultado.

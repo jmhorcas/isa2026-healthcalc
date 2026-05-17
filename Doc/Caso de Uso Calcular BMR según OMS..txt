@@ -1,0 +1,47 @@
+Caso de Uso: Calcular BMR según OMS.
+ID: CU-03
+Actor principal: Usuario.
+Ámbito: HealthCalc.
+Nivel: Objetivo de usuario.
+Descripción: El usuario quiere calcular su tasa metabólica basal (BMR) a partir de su peso, su edad y su género. El sistema tiene que comprobar que los datos introducidos sean válidos, convertir el peso a kilogramos si hace falta, elegir la fórmula de la OMS que corresponda según la edad y el género, y mostrar el resultado final.
+
+Interesados:
+• Usuario: Quiere saber su tasa metabólica basal de forma aproximada.
+• Sistema: Tiene que aplicar la fórmula correcta y evitar cálculos con datos no válidos.
+
+Precondiciones:
+• La aplicación está funcionando.
+• El usuario dispone de su peso y su edad.
+• El usuario introduce un género admitido por el sistema.
+
+Disparador: El usuario selecciona la opción de calcular BMR.
+
+Garantía de éxito:
+• El sistema calcula correctamente el BMR y muestra el resultado al usuario.
+
+Garantía mínima:
+• Si alguno de los datos no es válido, el sistema muestra un mensaje de error y no hace el cálculo.
+
+Escenario principal de éxito:
+1. El usuario entra en la aplicación.
+2. El usuario selecciona la opción de calcular BMR.
+3. El sistema pide el peso, la unidad de peso, la edad y el género.
+4. El usuario mete el peso.
+5. El usuario indica la unidad del peso.
+6. El usuario mete la edad.
+7. El usuario mete el género.
+8. El sistema convierte el peso a kilogramos si hace falta.
+9. El sistema comprueba que el peso sea positivo y que esté dentro de un rango biológico posible.
+10. El sistema comprueba que la edad sea positiva.
+11. El sistema comprueba que el género introducido sea válido.
+12. El sistema elige la fórmula de la OMS que corresponda según la edad y el género.
+13. El sistema calcula el BMR.
+14. El sistema muestra el resultado al usuario.
+
+Extensiones:
+4a. Peso no válido: El sistema indica que el peso introducido no es correcto.
+5a. Unidad no reconocida: El sistema muestra el error y no sigue con el cálculo.
+6a. Edad no válida: El sistema indica que la edad debe ser positiva.
+7a. Género no válido: El sistema indica que el género debe ser male o female.
+9a. Peso fuera de rango: El sistema muestra un mensaje de error y termina el caso de uso.
+Cualquier paso. El usuario cancela: El sistema para la operación sin calcular ningún resultado.

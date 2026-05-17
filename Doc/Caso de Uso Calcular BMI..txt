@@ -1,0 +1,45 @@
+Caso de Uso: Calcular BMI.
+ID: CU-01
+Actor principal: Usuario.
+Ámbito: HealthCalc.
+Nivel: Objetivo de usuario.
+Descripción: El usuario quiere calcular su índice de masa corporal (BMI) a partir de su peso y su altura. El sistema tiene que recoger los datos, comprobar que sean correctos, hacer la conversión de unidades si hace falta y mostrar el resultado final.
+
+Interesados:
+• Usuario: Quiere saber su BMI de una forma rápida y correcta.
+• Sistema: Tiene que hacer bien el cálculo y evitar que se den resultados no válidos.
+
+Precondiciones:
+• La aplicación está funcionando.
+• El usuario tiene un peso y una altura para introducir.
+• El sistema admite las unidades que introduce el usuario.
+
+Disparador: El usuario selecciona la opción de calcular BMI.
+
+Garantía de éxito:
+• El sistema calcula correctamente el BMI y enseña el resultado al usuario.
+
+Garantía mínima:
+• Si los datos no son válidos, el sistema muestra un mensaje de error y no hace el cálculo.
+
+Escenario principal de éxito:
+1. El usuario entra en la aplicación.
+2. El usuario selecciona la opción de calcular BMI.
+3. El sistema pide el peso, la altura y las unidades.
+4. El usuario mete el peso.
+5. El usuario mete la altura.
+6. El usuario indica las unidades correspondientes.
+7. El sistema convierte el peso a kilogramos si hace falta.
+8. El sistema convierte la altura a metros si hace falta.
+9. El sistema comprueba que el peso sea positivo y que esté dentro de un rango biológico posible.
+10. El sistema comprueba que la altura sea positiva y que esté dentro de un rango biológico posible.
+11. El sistema aplica la fórmula del BMI.
+12. El sistema muestra el resultado al usuario.
+
+Extensiones:
+4a. Peso no válido: El sistema indica que el peso debe ser positivo y estar dentro de un rango permitido.
+5a. Altura no válida: El sistema indica que la altura debe ser positiva y estar dentro de un rango permitido.
+6a. Unidad no reconocida: El sistema muestra el error y no sigue con el cálculo.
+9a. Peso fuera de rango: El sistema muestra un mensaje de error y termina el caso de uso.
+10a. Altura fuera de rango: El sistema muestra un mensaje de error y termina el caso de uso.
+Cualquier paso. El usuario cancela: El sistema para la operación sin calcular ningún resultado.
