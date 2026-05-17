@@ -401,3 +401,31 @@ Para ejecutar la interfaz gráfica desarrollada con Flask:
 A continuación, se muestra una captura de pantalla de la aplicación web implementada con Flask y HTML/CSS, diseñada bajo el patrón Modelo-Vista-Controlador (MVC):
 
 ![Captura de pantalla de la interfaz gráfica de HealthCalc](Doc/gui/InterfazGrafica.png)
+
+## Práctica 6: Patrones de Diseño
+
+En esta práctica se han aplicado cuatro patrones de diseño sobre la calculadora de salud (**HealthCalcImpl**), partiendo siempre del resultado del patrón anterior de forma acumulativa.
+
+### 2. Patrón Singleton
+
+**Propósito:** Garantizar que `HealthCalcImpl` tenga una única instancia en toda la aplicación, controlando el acceso global a ella mediante el atributo `_instance` y la sobrescritura de `__new__`.
+
+![Diagrama UML – Singleton](design_patterns/singleton.png)
+
+### 3a. Patrón Adapter
+
+**Propósito:** Integrar la calculadora en el sistema del Hospital Costa del Sol, que usa unidades distintas (altura en metros, peso en gramos), sin reimplementar la lógica existente. `HealthHospitalAdapter` implementa la interfaz `HealthHospital` y delega en `HealthCalcImpl` tras convertir las unidades.
+
+![Diagrama UML – Adapter](design_patterns/Adapter.png)
+
+### 3b. Patrón Proxy
+
+**Propósito:** Registrar de forma anónima cada uso de la calculadora en el hospital y calcular estadísticas agregadas (medias de altura, peso e IMC; conteo por sexo; total de pacientes). `HealthHospitalProxy` actúa como intermediario: intercepta las llamadas, acumula los datos y los delega a `HealthHospitalAdapter`.
+
+![Diagrama UML – Proxy](design_patterns/proxy.png)
+
+### 3c. Patrón Strategy
+
+**Propósito:** Permitir que la calculadora muestre el mensaje del IMC en español o inglés de forma intercambiable, y soportar simultáneamente una versión europea (metros/gramos) y una americana (pies/libras), sin modificar el núcleo de la calculadora. `CalculadoraRegional` delega la construcción del mensaje en la estrategia de idioma (`IdiomaStrategy`) inyectada en tiempo de ejecución.
+
+![Diagrama UML – Strategy](design_patterns/strategy.png)
